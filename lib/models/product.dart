@@ -33,33 +33,33 @@ class Product {
 }
 
 class Fields {
-    int user;
     String name;
-    DateTime dateAdded;
+    int amount;
     int price;
     String description;
+    int user;
 
     Fields({
-        required this.user,
         required this.name,
-        required this.dateAdded,
+        required this.amount,
         required this.price,
         required this.description,
+        required this.user,
     });
 
     factory Fields.fromJson(Map<String, dynamic> json) => Fields(
-        user: json["user"],
         name: json["name"],
-        dateAdded: DateTime.parse(json["date_added"]),
+        amount: json["amount"],
         price: json["price"],
         description: json["description"],
+        user: json["user"],
     );
 
     Map<String, dynamic> toJson() => {
-        "user": user,
         "name": name,
-        "date_added": "${dateAdded.year.toString().padLeft(4, '0')}-${dateAdded.month.toString().padLeft(2, '0')}-${dateAdded.day.toString().padLeft(2, '0')}",
+        "amount": amount,
         "price": price,
         "description": description,
+        "user": user,
     };
 }

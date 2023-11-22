@@ -17,6 +17,7 @@ class ShopFormPage extends StatefulWidget {
 class _ShopFormPageState extends State<ShopFormPage> {
     final _formKey = GlobalKey<FormState>();
     String _name = "";
+    int _amount = 0;
     int _price = 0;
     String _description = "";
     @override
@@ -131,6 +132,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                                     "http://127.0.0.1:8000/create-flutter/",
                                     jsonEncode(<String, String>{
                                         'name': _name,
+                                        'amount': _amount.toString(),
                                         'price': _price.toString(),
                                         'description': _description,
                                         // TODO: Sesuaikan field data sesuai dengan aplikasimu
